@@ -1,0 +1,15 @@
+$primary-color: #009688;
+
+
+.login-div{
+    width: 870px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    @media screen and(max-width: 890px) {
+        width: 80%;
+        min-width: 400px
+    }
+}
