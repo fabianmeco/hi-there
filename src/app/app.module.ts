@@ -7,12 +7,18 @@ import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { WrapChatComponent } from './wrap-chat/wrap-chat.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { ChatAreaComponent } from './chat-area/chat-area.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    WrapChatComponent,
+    ContactsComponent,
+    ChatAreaComponent
     
   ],
   imports: [

@@ -8,8 +8,33 @@ $primary-color: #009688;
     margin-bottom: 20px;
     background-color: #FFFFFF;
     border-radius: 3px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
     @media screen and(max-width: 890px) {
         width: 80%;
         min-width: 400px
     }
+    @media screen and (max-width: 402px){
+        width: 80%;
+        min-width: 320px
+    }
+}
+.login-options{
+    width: 50%;
+    height: 350px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    @media screen and(max-width: 890px) {
+        width: 80%;
+        min-width: 400px
+    }
+    @media screen and (max-width: 402px){
+        width: 80%;
+        min-width: 320px
+    }
+}
+
+.btn-login{
+    margin-top: 40px;
+    width: 250px
 }
