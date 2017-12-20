@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     provider.addScope('profile');
     provider.addScope('email'),
     this.afAuth.auth.signInWithPopup(provider).then(function(response){
+      console.log(response);
       if(response.credential){
         route.navigate(['/chat'])
       }
