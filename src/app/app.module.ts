@@ -23,8 +23,8 @@ import { MessageFieldComponent } from './message-field/message-field.component'
     ContactsComponent,
     ChatAreaComponent,
     SendMessageFieldComponent,
-    MessageFieldComponent,
-    FirebaseService
+    
+    MessageFieldComponent
   ],
   imports: [
     BrowserModule,
@@ -32,8 +32,9 @@ import { MessageFieldComponent } from './message-field/message-field.component'
     AngularFireAuthModule,
     AngularFirestoreModule,
     AppRoutingModule
+    
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

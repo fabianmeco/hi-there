@@ -8,15 +8,16 @@ import * as firebase from 'firebase/app';
 
 export class FirebaseService {
 
-    constructor(public afAuth: AngularFireAuth){}
-    onAuth(){
-        let provider = new firebase.auth.GoogleAuthProvider();
-        provider.addScope('profile');
-        provider.addScope('email'),
-        this.afAuth.auth.signInWithPopup(provider).then(function(response){
-          if(response.credential){
-            return response;
-          }
-        }).catch();  
-    }
+  constructor(public afAuth: AngularFireAuth) { }
+  onAuth() {
+      let provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope('profile');
+      provider.addScope('email');
+      return this.afAuth.auth.signInWithPopup(provider);
+    
+  }
+
+  onCheckLoggedIn() {
+    return this.afAuth.auth.currentUser;
+  }
 }
