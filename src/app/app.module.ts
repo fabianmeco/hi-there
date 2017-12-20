@@ -4,13 +4,16 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { FirebaseService } from './firebase.service';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { WrapChatComponent } from './wrap-chat/wrap-chat.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ChatAreaComponent } from './chat-area/chat-area.component';
-import {AppRoutingModule} from './app-routing.module'
+import {AppRoutingModule} from './app-routing.module';
+import { SendMessageFieldComponent } from './send-message-field/send-message-field.component';
+import { MessageFieldComponent } from './message-field/message-field.component'
 
 @NgModule({
   declarations: [
@@ -18,8 +21,10 @@ import {AppRoutingModule} from './app-routing.module'
     LoginComponent,
     WrapChatComponent,
     ContactsComponent,
-    ChatAreaComponent
-    
+    ChatAreaComponent,
+    SendMessageFieldComponent,
+    MessageFieldComponent,
+    FirebaseService
   ],
   imports: [
     BrowserModule,
