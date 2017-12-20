@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { WrapChatComponent } from './wrap-chat/wrap-chat.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ChatAreaComponent } from './chat-area/chat-area.component';
-
+import {AppRoutingModule} from './app-routing.module'
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { ChatAreaComponent } from './chat-area/chat-area.component';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 # HiThere
 
-## Development server
+## Local Config
 
 ### Requeriments 
 1. Node version 6.11.5 or greater

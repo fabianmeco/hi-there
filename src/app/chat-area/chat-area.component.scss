@@ -1,0 +1,39 @@
+.chat-area-content{
+    height: 100%;
+    position: relative;
+}
+.head-info-user{
+    width: 100%;
+    height: 60px;
+    background-color: #eeeeee;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    border-left: 1px solid rgba(0,0,0,0.08);
+}
+.profile-user-chat-pic img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px
+}
+.contact-name-chat{
+    margin-top: 20px;
+    padding-left: 20px;  
+    font-size: 16px;
+}
+.messages-field{
+    width:100%;
+    height: calc(100% - 120px);
+    background-image: url('https://www.todoiphone.net/wp-content/uploads/2014/03/WhatsApp-Wallpaper-39.jpg');
+    display: flex;
+    overflow-y: scroll;
+    position: absolute;
+}
+.send-message-field{
+    width: 100%;
+    height: 62px;
+    background-color: #f5f1ee;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    vertical-align: baseline;
+}
