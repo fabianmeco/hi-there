@@ -3,13 +3,22 @@
         <img [src]="user.photoURL" alt="" class="rounded-circle">
     </span>
     <span class="contact-name-chat">{{ user.name }}</span>
-    <span class="logout"><button class="btn "  (click)="onLogout()"><i class="fa fa-sign-out"></i>Sign-out</button></span>
+    <span class="logout">
+        <button class="btn " (click)="onLogout()">
+            <i class="fa fa-sign-out"></i>Sign-out</button>
+    </span>
 </div>
 <div class="chat-field">
     <div class="messages-field">
-        
-            <div *ngFor = "let message of messages">{{ message.text }}</div>
-        
+        <ng-container *ngFor="let message of messages">
+            <div class="message-container">
+                <div *ngIf="message.sentBy != user.id" class="message-me">
+                    {{ message.text }}
+                </div>
+                <div *ngIf="message.sentBy == user.id" class="message-other">
+                    {{ message.text }}
+                </div>
+            </div>
+        </ng-container>
     </div>
-    
 </div>

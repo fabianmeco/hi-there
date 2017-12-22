@@ -14,6 +14,8 @@ import { Promise } from 'q';
 
 export interface User {name:string, photoURL:string, id:string};
 export interface Message {text: string, sentBy: string, date: string, users:string[]}
+export interface Conversation {users:string[], id:string}
+
 @Injectable()
 
 export class FirebaseService {
@@ -23,12 +25,17 @@ export class FirebaseService {
   private messageCollection: AngularFirestoreCollection<Message>;
   messages: Observable<Message[]>;
 
+  private conversationCollection: AngularFirestoreCollection<Conversation>;
+  conversation: Observable<Conversation[]>;
+
+
   constructor(public afAuth: AngularFireAuth, private afdb: AngularFirestore) {
     this.usersCollection = afdb.collection<User>('users');
     this.users = this.usersCollection.valueChanges();
     this.messageCollection = afdb.collection<Message>('messages');
     this.messages = this.messageCollection.valueChanges();
-
+    this.conversationCollection = afdb.collection<Conversation>('conversations');
+    this.conversation = this.conversationCollection.valueChanges();
    }
   onAuth() {
       let provider = new firebase.auth.GoogleAuthProvider();
@@ -55,7 +62,15 @@ export class FirebaseService {
   }
 
   onGetMessagesConver(usersId:string[]){
-    return this.afdb.collection('messages', ref => ref.where('users', '==', usersId)).valueChanges();
+    return this.afdb.collection('messages', ref => ref.where('users', '==', usersId).orderBy('date', 'asc')).valueChanges();
+  }
+  messagemessagemessagemessage
+  onSaveConversation(conver: Conversation){
+    return this.conversationCollection.add(conver);
+  }
+
+  onGetConversation(converId: string){
+    return this.afdb.collection('conversations', ref => ref.where('id', '==', converId)).valueChanges();
   }
 
   /* onCheckLoggedIn() {

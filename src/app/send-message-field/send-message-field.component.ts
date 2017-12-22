@@ -42,6 +42,7 @@ export class SendMessageFieldComponent implements OnInit {
     this._firebaseService.onSaveMessage(this.message)
       .then(response => {
         this.texto="";
+        console.log(response)
         this._converService.onNotifyChange([this.userid, this.user.id]);
       });
   }

@@ -24,11 +24,34 @@ $gray: #eeeeee;
 .messages-field{
     width:100%;
     height: calc(100% - 120px);
-    background-image: url('https://www.todoiphone.net/wp-content/uploads/2014/03/WhatsApp-Wallpaper-39.jpg');
-    display: flex;
+    background-image: url('https://www.todoiphone.net/wp-content/uploads/2014/03/WhatsApp-Wallpaper-39.jpg');    
     overflow-y: scroll;
     position: absolute;
 }
 .logout{
     float: right
+}
+.message-other{
+    float: left;
+    border-radius: 3px;
+    background-color: #FFF;
+    padding: 4px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.message-me{
+    float: right;
+    border-radius: 3px;
+    background-color: #dcf8c6;
+    padding: 4px;
+    position: relative;
+    margin-top: 10px;
+    margin-right: 10px;
+    
+}
+.message-container{    
+    display: flex;
+    position: relative;
+    
 }

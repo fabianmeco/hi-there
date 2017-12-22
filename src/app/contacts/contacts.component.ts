@@ -17,7 +17,6 @@ export class ContactsComponent implements OnInit {
 
   ngOnInit() {
     this.afAuth.auth.onAuthStateChanged(response=>{
-      console.log(response)
       if(response){
         this.user.name = response.displayName;
         this.user.photoURL = response.photoURL;
