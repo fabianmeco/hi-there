@@ -10,18 +10,26 @@ import { FirebaseService } from '../firebase.service'
 export class LoginComponent implements OnInit {
   user: User = <User>{};
   constructor(private router: Router, public _firebaseService: FirebaseService) { }
-  
+
   ngOnInit() {
   }
 
-  onLogin(){    
-      this._firebaseService.onAuth()
-      .then((response) =>{
-        
+  onLogin() {
+    this._firebaseService.onAuth()
+      .then((response) => {
         this.user.name = response.user.displayName;
         this.user.photoURL = response.user.photoURL;
         this.user.id = response.user.uid;
-        this._firebaseService.onSaveUser(this.user).then(user => this.router.navigate(['/chat']))         
+        this._firebaseService.getUser(this.user.id)
+          .subscribe(data => {
+            if(data.length==0){
+              this._firebaseService.onSaveUser(this.user).then(
+                user => this.router.navigate(['/chat'])
+              )
+            }else{
+              this.router.navigate(['/chat'])
+            }
+          })
       })
       .catch();
   }
@@ -30,7 +38,7 @@ export class LoginComponent implements OnInit {
 
 interface User {
   photoURL: string;
-  name:string;
+  name: string;
   id: string;
 }
 

@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wrap-chat.component.scss']
 })
 export class WrapChatComponent implements OnInit {
-
+  idchat:string="";
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onChangeChat(chat:string){
+    this.idchat=chat;
   }
 
 }

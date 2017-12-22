@@ -22,8 +22,7 @@ export class AppComponent implements OnInit{
   ngOnInit(){
     this.auth.auth.onAuthStateChanged(response=>{
       if(response){
-        console.log(response);
-        return this.route.navigate(['/chat']);
+       return this.route.navigate(['/chat']);
       } 
       this.route.navigate(['/']);
     });
