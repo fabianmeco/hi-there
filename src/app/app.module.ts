@@ -5,6 +5,9 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FirebaseService } from './firebase.service';
+import { ChangeChatService } from './change-chat.service'
+import { ConversationService } from './conversation.service'
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -31,10 +34,11 @@ import { MessageFieldComponent } from './message-field/message-field.component'
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
     
   ],
-  providers: [FirebaseService],
+  providers: [FirebaseService, ChangeChatService, ConversationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

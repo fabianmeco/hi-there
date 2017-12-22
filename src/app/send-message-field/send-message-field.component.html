@@ -1,10 +1,10 @@
-<div class="send-message-field">         
+<div class="send-message-field" >         
     
             <div class="input-text">
-                <input type="text" class="form-control" name="message" id="message" placeholder="Type your message" >
+                <input type="text" class="form-control" name="message" id="message" placeholder="Type your message" (keyup.enter) = "onSentMessage()" [(ngModel)]="texto">
             </div>
             <div class="input-button">   
-                 <button class="btn"><i class="fa fa-send"></i></button>                    
+                 <button class="btn"><i class="fa fa-send" (click) = "onSentMessage()"></i></button>                    
             </div>                    
         
     

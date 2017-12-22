@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FirebaseService } from '../firebase.service';
+import { ChangeChatService } from '../change-chat.service';
+
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
@@ -11,7 +13,7 @@ export class ContactsComponent implements OnInit {
   contacts : any = <User[]>{};
 
   @Output() idchat = new EventEmitter<string>();
-  constructor(public afAuth: AngularFireAuth, public _firebaseService: FirebaseService) { }
+  constructor(public afAuth: AngularFireAuth, public _firebaseService: FirebaseService, private _changeChatService: ChangeChatService) { }
 
   ngOnInit() {
     this.afAuth.auth.onAuthStateChanged(response=>{
@@ -29,7 +31,7 @@ export class ContactsComponent implements OnInit {
   }
 
   onSelectChat(event:any){
-    this.idchat.emit(event.target.id);
+    this._changeChatService.onNotifyChange(event.target.id);
   }
 
 }

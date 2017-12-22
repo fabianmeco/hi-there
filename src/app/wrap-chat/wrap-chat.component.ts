@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { StringifyOptions } from 'querystring';
 
 @Component({
   selector: 'app-wrap-chat',
@@ -6,14 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wrap-chat.component.scss']
 })
 export class WrapChatComponent implements OnInit {
-  idchat:string="";
+  @Output() idchatchange= new EventEmitter <string>();
+  idchat: string;
   constructor() { }
 
   ngOnInit() {
   }
 
-  onChangeChat(chat:string){
-    this.idchat=chat;
+  onChangeChat(chat:string){    
+    this.idchat = chat;
+    this.onEmitChangeChat();
+  }
+
+  onEmitChangeChat(){
+    console.log(this.idchat)
   }
 
 }

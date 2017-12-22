@@ -1,4 +1,4 @@
 <div class="chat-area-content">
-    <app-message-field></app-message-field>
-    <app-send-message-field></app-send-message-field>
+    <app-message-field (idchat) = "onChangeChat($event)"></app-message-field>
+    <app-send-message-field (idchat) = "onChangeChat($event)"></app-send-message-field>
 </div>
